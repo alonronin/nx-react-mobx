@@ -58,7 +58,7 @@ export default observer(App);
 
 The above code will throw an error:
 
-![](Screen Shot 2022-10-11 at 23.51.15.png)
+![](./error-screenshot.png)
 
 # Fixing Reflect.metadata Error
 
