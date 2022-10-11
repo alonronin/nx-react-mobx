@@ -1,14 +1,34 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
+import { observable, computed, makeObservable } from 'mobx';
+import { observer } from 'mobx-react-lite';
+
+class Store {
+  @observable
+  count = 0;
+
+  @computed
+  get double() {
+    return this.count * 2;
+  }
+
+  constructor() {
+    makeObservable(this);
+  }
+}
+
+const store = new Store();
 
 export function App() {
   return (
     <>
-      <NxWelcome title="app" />
-      <div />
+      <p>
+        <label>Count:</label> {store.count}
+      </p>
+      <p>
+        <label>Count Double:</label> {store.double}
+      </p>
+      <button onClick={() => store.count++}>Count Up</button>
     </>
   );
 }
 
-export default App;
+export default observer(App);
