@@ -17,7 +17,7 @@ class Store {
 
 const store = new Store();
 
-export function App() {
+function App() {
   return (
     <>
       <p>

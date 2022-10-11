@@ -37,7 +37,7 @@ class Store {
 ```typescript jsx
 const store = new Store();
 
-export function App() {
+function App() {
   return (
     <>
       <p>
@@ -50,6 +50,8 @@ export function App() {
     </>
   );
 }
+
+export default observer(App);
 ```
 
 ## Reflect.metadata Errpr
